@@ -1,0 +1,93 @@
+<!-- Header End -->
+<div class="container-xxl py-5 bg-dark page-header mb-5">
+    <div class="container my-5 pt-5 pb-4">
+        <h1 class="display-3 text-white mb-3 animated slideInDown" >Tin tức</h1>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb text-uppercase">
+                <li class="breadcrumb-item"><a href="/ungvien">Trang chủ</a></li>
+                <li class="breadcrumb-item text-white active" aria-current="page">{{cttin.tieude}}</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- Header End -->
+<section style="background: linear-gradient(to bottom,rgba(255,255,255,.97) 0,rgba(255,255,255,.96) 100%),url(/assets/img/bg-8.jpg);">
+    <div class="container" style="font-family: Tahoma;">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-9 cttin" style="margin-bottom:30px;margin-top: 40px;background: white">
+                <p style="color: #30a130;font-size: 16px;text-transform: uppercase;font-weight: bold;height: 16px">{{cttin.tieude}}</p>
+                <p style="color: #acacac;font-size: 12px"><i class="fa fa-calendar" aria-hidden="true"></i> Ngày đăng: {{cttin.ngaydang | date:"dd/MM/yyyy" }}</p>
+                <span class="ct" [innerHTML]="cttin.noidung"></span>
+                <br />
+                <div>
+                    <button style="height:25px;line-height:9px;font-size:13px" class="btn btn-primary"><i class="fas fa-thumbs-up"></i> Thích 1</button>
+                    <button style="height:25px;line-height:9px;font-size:13px;margin-left: 10px;" class="btn btn-primary"><i class="fab fa-facebook"></i> Chia sẻ 1</button>
+                    <div style="margin-top:30px;margin-bottom:40px">
+                        <div style="height:50px;line-height:50px;color:white;background:#30a130">
+                            <i style="margin-left:15px" class="fa fa-comment-o"></i> BÌNH LUẬN
+                        </div>
+                        <div style="background-color:white">
+                            <br />
+                            <p style="margin-left:15px;border-bottom:1px solid #e9ebee;height:30px;width:795px"><strong>0 bình luận</strong></p>
+                            <p style="margin-left:15px;margin-top:20px;border-bottom:1px solid #e9ebee;height:70px;width:795px">
+                                <a><img src="/assets/img/anhtho.jpg" style="height:50px;width:50px" /></a>
+                                <a><input class="binhluan" type="text" placeholder="Thêm bình luận" style="height:48px;margin-left:10px;margin-top:2px;width:730px;border:1px solid #e9ebee;border-radius:0px" /></a>
+                            </p>
+                            <p style="color:blue;margin-left:15px;font-size:12px;">
+                                <i class="fab fa-facebook-square" style="margin-bottom:20px"></i> <a href="#">Plugin bình luận trên Facebook</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-3">
+                <div class="nav flex-column mnubv" style="width:270px;margin-top:20px;background: white">
+                    <div class="dropdown  dropright" style="background:#30a130;height:42px;width:270px">
+                        <a class="nav-link " href="#" data-toggle="dropdown" style="color:white;font-weight:bold;font-size:15px;line-height:30px;margin-left:10px;text-decoration:none"><i class="fas fa-bars" style="margin-right:10px"></i>BÀI VIẾT MỚI NHẤT</a>
+                    </div>
+                    <div class="dropdown  dropright anhtd" *ngFor="let item of tintuc |slice:0:6; " >
+                        <div>
+                            <a href="/ungvien/cttin/{{item.id_tin}}" title="" style="text-align: center;"><img src="./assets/img/tin/{{item.hinhanh}}" /></a>
+                        </div>
+                        <div style="width:165px" class="tdbai">
+                            <a href="/ungvien/cttin/{{item.id_tin}}">{{item.tieude}}</a>
+                            <p style="color:#707070;font-size:12px;">Ngày đăng: {{item.ngaydang | date:"dd/MM/yyyy" }}</p>
+                        </div>
+                    </div>
+                    <b></b>
+                </div>
+                <div class="nav flex-column dmuc" style="margin-top:20px;width:270px;background: white;font-size: 14px;font-weight: bold;">
+                    <div class="dropdown  dropright" style="background:#30a130;height:42px;width:270px">
+                        <a class="nav-link " href="#" data-toggle="dropdown" style="color:white;font-weight:bold;font-size:15px;line-height:30px"><i class="fas fa-bars" style="margin-right:10px"></i>DANH MỤC</a>
+                    </div>
+                    <div class="dropdown  dropright">
+                        <a class="nav-link" href="/ungvien">
+                            TRANG CHỦ
+                        </a>
+                    </div>
+                    <div class="dropdown  dropright">
+                        <a class="nav-link" href="/ungvien/gioithieu">
+                            GIỚI THIỆU
+                        </a>
+                    </div>
+                    <div class="dropdown  dropright">
+                        <a class="nav-link " href="#">
+                            NGÀNH NGHỀ
+                        </a>
+                    </div>
+                    <div class="dropdown  dropright">
+                        <a class="nav-link " href="#">
+                            TIN TỨC
+                        </a>
+                    </div>
+                    <div class="dropdown  dropright">
+                        <a class="nav-link " href="/ungvien/lienhe">
+                            LIÊN HỆ
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

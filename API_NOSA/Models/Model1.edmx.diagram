@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e81d8de193834b6581a05d665c245ed6" Name="Diagram1" ZoomLevel="64">
+        <EntityTypeShape EntityType="DBNOSAModel.Congty" Width="1.5" PointX="5.25" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBNOSAModel.Congviec" Width="1.5" PointX="7.5" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBNOSAModel.Danhmucnganh" Width="1.5" PointX="5.25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBNOSAModel.Danhmuctin" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBNOSAModel.Kinhnghiem" Width="1.5" PointX="5.25" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBNOSAModel.Kynang" Width="1.5" PointX="5.25" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBNOSAModel.Loaicongviec" Width="1.5" PointX="5.25" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBNOSAModel.Loaihinhcongviec" Width="1.5" PointX="5.25" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBNOSAModel.Luucongviec" Width="1.5" PointX="9.75" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBNOSAModel.NopCV" Width="1.5" PointX="9.75" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBNOSAModel.Tinhthanh" Width="1.5" PointX="5.25" PointY="23.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBNOSAModel.Tintuc" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBNOSAModel.Trinhdohocvan" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBNOSAModel.User_role" Width="1.5" PointX="3" PointY="13.25" IsExpanded="true" />
+        <AssociationConnector Association="DBNOSAModel.FK_Congty_User_role" ManuallyRouted="false" />
+        <AssociationConnector Association="DBNOSAModel.FK_Congviec_Congty" ManuallyRouted="false" />
+        <AssociationConnector Association="DBNOSAModel.FK_Congviec_Danhmucnganh" ManuallyRouted="false" />
+        <AssociationConnector Association="DBNOSAModel.FK_Congviec_Kinhnghiem" ManuallyRouted="false" />
+        <AssociationConnector Association="DBNOSAModel.FK_Congviec_Kynang" ManuallyRouted="false" />
+        <AssociationConnector Association="DBNOSAModel.FK_Congviec_Loaicongviec" ManuallyRouted="false" />
+        <AssociationConnector Association="DBNOSAModel.FK_Congviec_Loaihinhcongviec" ManuallyRouted="false" />
+        <AssociationConnector Association="DBNOSAModel.FK_Congviec_Tinhthanh" ManuallyRouted="false" />
+        <AssociationConnector Association="DBNOSAModel.FK_Congviec_Trinhdohocvan" ManuallyRouted="false" />
+        <AssociationConnector Association="DBNOSAModel.FK_Luucongviec_Congviec" ManuallyRouted="false" />
+        <AssociationConnector Association="DBNOSAModel.FK_NopCV_Congviec" ManuallyRouted="false" />
+        <AssociationConnector Association="DBNOSAModel.FK_Tintuc_Danhmuctin" ManuallyRouted="false" />
+        <AssociationConnector Association="DBNOSAModel.FK_Kinhnghiem_User_role" ManuallyRouted="false" />
+        <AssociationConnector Association="DBNOSAModel.FK_Luucongviec_User_role" ManuallyRouted="false" />
+        <AssociationConnector Association="DBNOSAModel.FK_NopCV_User_role" ManuallyRouted="false" />
+        <AssociationConnector Association="DBNOSAModel.FK_User_role_Trinhdohocvan" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

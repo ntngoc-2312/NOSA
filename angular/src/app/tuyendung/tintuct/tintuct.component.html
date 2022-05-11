@@ -1,0 +1,83 @@
+<!-- Header End -->
+<div class="container-xxl py-5 bg-dark page-header mb-5">
+    <div class="container my-5 pt-5 pb-4">
+        <h1 class="display-3 text-white mb-3 animated slideInDown" >{{dmuc.tendanhmuctin}}</h1>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb text-uppercase">
+                <li class="breadcrumb-item"><a href="/nhatuyendung">Trang chủ</a></li>
+                <li class="breadcrumb-item text-white active" aria-current="page">{{dmuc.tendanhmuctin}}</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- Header End -->
+<section style="font-family: Tahoma;font-size: 14px;background: linear-gradient(to bottom,rgba(255,255,255,.97) 0,rgba(255,255,255,.96) 100%),url(/assets/img/bg-8.jpg);">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-9" style="margin-bottom:30px">
+               
+                <div class="review" *ngFor="let item of tintuc ">
+                    <div class="anh" style="width:248px;height:166px;box-shadow: 0 0 2px 0 #b5b5b5;text-align: center;">
+                        <a href="/nhatuyendung/cttin/{{item.id_tin}}" ><img src="/assets/img/tin/{{item.hinhanh}}" style="text-align: center; width:auto;height:162px;margin-left:2px;margin-top:2px" title="" /></a>
+                    </div>
+                    <div class="tieudebv">
+                        <a href="/nhatuyendung/cttin/{{item.id_tin}}" title="">{{item.tieude}}</a>
+                        <p style="color:#707070; font-size:12px;margin: 5px 0px 10px;">
+                            Ngày đăng: {{item.ngaydang | date:"dd/MM/yyyy"}}
+                        </p>
+                        <p innerHTML="{{item.noidung}}" style="width: 530px; margin-left: 0px; overflow: hidden;text-overflow: ellipsis; -webkit-line-clamp: 3;height: 80px;"></p>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-3">
+                <div class="nav flex-column mnubv" style="width:270px;margin-top:20px;background: white">
+                    <div class="dropdown  dropright" style="background:#86be4c;height:42px;width:270px">
+                        <a class="nav-link " href="#" data-toggle="dropdown" style="color:white;font-weight:bold;font-size:14px;line-height:30px;margin-left:10px;text-decoration:none"><i class="fas fa-bars" style="margin-right:30px"></i>BÀI VIẾT MỚI NHẤT</a>
+                    </div>
+                    <div class="dropdown  dropright anhtd" *ngFor="let item of tintuc |slice:0:6;" >
+                        <div>
+                            <a href="/nhatuyendung/cttin/{{item.id_tin}}" title="" style="text-align: center;"><img src="./assets/img/tin/{{item.hinhanh}}" /></a>
+                        </div>
+                        <div style="width:165px" class="tdbai">
+                            <a href="/nhatuyendung/cttin/{{item.id_tin}}">{{item.tieude}}</a>
+                            <p style="color:#707070;font-size:12px;">Ngày đăng: {{item.ngaydang | date:"dd/MM/yyyy" }}</p>
+                        </div>
+                    </div>
+                    <b></b>
+                </div>
+                <div class="nav flex-column dmuc" style="margin-top:20px;width:270px;background: white">
+                    <div class="dropdown  dropright" style="background:#86be4c;height:42px;width:270px">
+                        <a class="nav-link " href="#" data-toggle="dropdown" style="color:white;font-weight:bold;font-size:14px;line-height:30px"><i class="fas fa-bars" style="margin-right:30px"></i>DANH MỤC</a>
+                    </div>
+                    <div class="dropdown  dropright">
+                        <a class="nav-link" href="/nhatuyendung">
+                            TRANG CHỦ
+                        </a>
+                    </div>
+                    <div class="dropdown  dropright">
+                        <a class="nav-link" href="/nhatuyendung/gioithieu">
+                            GIỚI THIỆU
+                        </a>
+                    </div>
+                    <div class="dropdown  dropright">
+                        <a class="nav-link " href="/nhatuyendung">
+                            Đăng tuyển dụng
+                        </a>
+                    </div>
+                    <div class="dropdown  dropright">
+                        <a class="nav-link " href="#">
+                            TIN TỨC
+                        </a>
+                    </div>
+                    <div class="dropdown  dropright">
+                        <a class="nav-link " href="/nhatuyendung/lienhe">
+                            LIÊN HỆ
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,196 @@
+<!-- Header End -->
+<div class="container-xxl py-5 bg-dark page-header mb-5">
+    <div class="container my-5 pt-5 pb-4">
+        <h1 class="display-3 text-white mb-3 animated slideInDown">Việc làm</h1>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb text-uppercase">
+                <li class="breadcrumb-item"><a href="/ungvien">Trang chủ</a></li>
+                <li class="breadcrumb-item text-white active" aria-current="page">{{ten}}</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- Header End -->
+
+
+<!-- Job Detail Start -->
+<div class="container-xxl  wow fadeInUp" data-wow-delay="0.1s" style="background-color: #f7f7f7;">
+    <div class="container">
+        <div class="row gy-5 gx-4 ctcv">
+            <div class="noidung ctiet" style="border-radius:5px;background-color: white;">
+                <div class="d-flex align-items-center mb-5" style="margin-left: 20px;">
+                    <img class="flex-shrink-0 img-fluid  rounded" src="assets/img/{{logo}}" alt=""
+                        style="width: 128px; height: auto;">
+                    <div class="text-start ps-4" style="margin-top: 35px;">
+                        <h4>{{ten}}</h4>
+                        <p style="height: 20px;"><i class="fas fa-map-marker-alt text-primary me-2"></i>{{tentinh}}</p>
+                        <p style="height: 20px;"><i class="fas fa-dollar-sign text-primary me-2"></i>{{luongtoithieu |number}} -
+                            {{luongtoida | number}} VNĐ</p>
+                        <p style="height: 30px;"><i class="far fa-clock text-primary me-2"></i>{{tenloaihcv}}</p>
+                        <span class="text-truncate me-3">
+                            <a class="btn" (click)="luucv(id_congviec)"
+                                style="border-radius: 4px; width:160px;height:45px;line-height: 30px;border: 1px solid #05a34c;color: #05a34c;font-size: 18px;"><i
+                                    class="fas fa-heart" style="margin-right: 10px;"></i>Lưu</a>
+                        </span>
+                        <span class="text-truncate me-3">
+                            <a class="btn"
+                                style="border-radius: 4px;width:160px;height:45px;line-height: 30px;background: #05a34c;color: white;font-size: 18px;" data-toggle="modal" data-target="#ApplyModal"><i
+                                    class="fab fa-telegram-plane" style="margin-right: 10px;"></i>Nộp CV</a>
+                        </span>
+                    </div>
+                </div>
+                <div class="modal" tabindex="-1" role="dialog" id="ApplyModal">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Nộp CV ứng tuyển của bạn</h5>
+                                <button type="button" class="close btn btn-primary" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Chọn hồ sơ từ thiết bị của bạn</p>
+                                <input type="file" class="form-control-file" id="exampleFormControlFile1"
+                                    (change)="PhotoUpload($event)">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit"  (click)="apply(id_congviec)" class="btn btn-primary">Nộp
+                                    CV</button>
+                                <button type="button" class="btn btn-dark"
+                                    data-dismiss="modal">Đóng</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div  style="margin-left: 20px;margin-bottom: 20px;">
+                    <h4 class="mb-3">Mô tả</h4>
+                    <div [innerHTML]="mota"></div>
+                    <h4 class="mb-3">Kinh nghiệm/Kỹ năng chi tiết</h4>
+                    <p [innerHTML]="kinhnghiemchitiet"></p>
+                    
+                </div>
+                <div class="row job-summary" style="margin-left: 15px;margin-bottom: 20px;">
+                    <div class="col-md-6 pr-lg-1">
+                        <div class="card h-100 card-fluid border-0 bg-lg-light p-0 px-lg-4 py-lg-3 rounded-lg">
+                            <div class="card-body p-0 px-lg-4 py-lg-2">
+                                <div class="d-flex align-items-baseline label mb-3">
+                                    <i class="fa fa-inbox mr-2 text-secondary"></i>
+                                    <div class="job-summary-item d-flex d-lg-block">
+                                        <div class="my-0 summary-label">Loại công việc</div>
+                                        <div class="font-weight-bolder">
+                                            Nhân viên toàn thời gian
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-baseline label mb-3">
+                                    <i class="fa fa-th-large mr-2 text-secondary"></i>
+                                    <div class="job-summary-item d-flex d-lg-block">
+                                        <div class="my-0 summary-label">Ngành nghề</div>
+                                        <div class="font-weight-bolder">
+                                            {{tendanhmuc}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-baseline label mb-3">
+                                    <i class="fa fa-briefcase mr-2 text-secondary"></i>
+                                    <div class="job-summary-item d-flex d-lg-block">
+                                        <div class="my-0 summary-label">Kinh nghiệm</div>
+                                        <div class="font-weight-bolder">
+                                            {{tenknghiem}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-baseline label mb-3">
+                                    <i class="fa fa-graduation-cap mr-2 text-secondary"></i>
+                                    <div class="job-summary-item d-flex d-lg-block">
+                                        <div class="my-0 summary-label">Học vấn</div>
+                                        <div class="font-weight-bolder">
+                                            {{tentrinhdo}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div style="margin-left: 20px;margin-bottom: 40px;">
+                    <ul class="list-unstyled contact-person rounded-lg">
+                        <li>
+                            <span class="label mr-2 text-nowrap">
+                                Tên liên hệ:
+                            </span>
+                            <span class="person-name font-weight-bolder m-0">
+                                Phòng Nhân Sự
+                            </span>
+                        </li>
+                        <li>
+                            <span class="label mr-2 text-nowrap">
+                                Địa chỉ:
+                            </span>
+                            <span>Tầng 7, Tòa nhà Abacus, 58 Nguyễn Đình Chiểu, P. Đa Kao</span>
+                        </li>
+
+                    </ul>
+                    <div class="d-flex flex-wrap">
+                        <div class="mr-5">
+                            <span class="font-weight-bolder">
+                                Ngày đăng tuyển:
+                            </span>
+                            {{ngaybatdau | date:'dd-MM-yyyy' }}
+
+                        </div>
+                        <div>
+                            <span class="font-weight-bolder" style="margin-left:30px;">
+                                Ngày hết hạn:
+                            </span>
+                            {{ngayketthuc | date:'dd-MM-yyyy'}}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="noidung cty" style="border-radius:5px;background-color: white;font-size: 14px;">
+                <div class=" rounded  mb-4 wow slideInUp " data-wow-delay="0.1s"
+                    style="margin-top: 35px;margin-left: 18px;">
+                    <div class="d-flex align-items-center " style="margin-bottom:20px">
+                        <img class="flex-shrink-0 img-fluid  rounded" src="assets/img/{{logo}}" alt=""
+                            style="width: 60px; height: auto;">
+                        <div class="text-start ps-4" >
+                            <a style="font-size: 1.25rem;" href="/ungvien/congty/{{id_congty}}">{{tencongty}}</a>
+                            
+                        </div>
+                    </div>
+                    <ul class="list-company-info list-unstyled border-top border-bottom"
+                        style="margin-right: 18px;color: #0E1225;">
+                        <li class="my-2 align-items-start">
+                            <i class="fas fa-globe me-2"></i>
+                            <a class="font-weight-bold link1" target="_blank" rel="nofollow"
+                                href="http://ptc4.npt.evn.vn/">{{url_website}}</a>
+                        </li>
+                        <div class="horizontal-divider" style=" height: 1px; background-color: #D7D7DB;"></div>
+                        <li class="my-2 align-items-start">
+                            <i class="fas fa-phone-alt me-2"></i>{{dienthoai}}
+
+                        </li>
+                        <div class="horizontal-divider" style=" height: 1px; background-color: #D7D7DB;"></div>
+                        <li class="my-2  align-items-start">
+                            <i class="fas fa-envelope me-2"></i>{{email}}
+                        </li>
+                    </ul>
+                    <div class="mt-4 text-collapse" style="margin-right: 18px;color: #0E1225;">
+                        <div style="text-align: left;font-weight: normal;" [innerHTML]="gioithieu" >
+                        </div>
+
+                        
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Job Detail End -->

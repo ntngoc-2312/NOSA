@@ -1,0 +1,88 @@
+<!-- Header End -->
+<div class="container-xxl py-5 bg-dark page-header mb-5">
+    <div class="container my-5 pt-5 pb-4">
+        <h1 class="display-3 text-white mb-3 animated slideInDown" >{{nganh.tendanhmuc}}</h1>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb text-uppercase">
+                <li class="breadcrumb-item"><a href="/ungvien">Trang chủ</a></li>
+                <li class="breadcrumb-item text-white active" aria-current="page">{{nganh.tendanhmuc}}</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- Header End -->
+
+<!-- About Start -->
+<div class="container">
+    <div class="row g-5">
+        <div class="col-lg-9  fadeIn" data-wow-delay="0.5s" >
+            <p class=" text-secondary">
+                Có tất cả {{viec.length}} việc làm
+                </p>
+            <div class="job-item p-4 mb-4" *ngFor="let item of viec ">
+                <div class="row g-4" >
+                    <div class="col-sm-12 col-md-8 d-flex align-items-center">
+                        <img class="flex-shrink-0 img-fluid border rounded" src="assets/img/{{item.logo}}"
+                            alt="" style="width: 80px; height: 80px;">
+                        <div class="text-start ps-4">
+                            <h5 class="mb-3" ><a href="/ungvien/ctcv/{{item.id_congviec}}" (click)="CTCV(item.id_congviec)">{{item.ten}}</a></h5>
+                            <span class="text-truncate me-3">
+                                <i class="fa fa-map-marker-alt text-primary me-2"></i>{{item.tentinh}}
+                            </span>
+                            <span class="text-truncate me-3">
+                                <i class="far fa-clock text-primary me-2"></i>{{item.tenloaihcv}}
+                            </span>
+                            <span class="text-truncate me-0"><i
+                                    class="far fa-money-bill-alt text-primary me-2"></i>{{item.luongtoithieu| number}} - {{item.luongtoida | number}} VNĐ</span>
+                        </div>
+                    </div>
+                    <div
+                        class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+                        <div class="d-flex mb-3">
+                            <a class="btn btn-light btn-square me-3" (click)="luucv(item.id_congviec)"><i
+                                    class="far fa-heart text-primary"></i></a>
+                            <a class="btn btn-primary" data-toggle="modal" data-target="#ApplyModal">Apply Ngay</a>
+                        </div>
+                        <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>Ngày hết hạn: {{item.ngayketthuc | date:'dd-MM-yyyy'}}</small>
+                    </div>
+                </div>
+                <div class="modal" tabindex="-1" role="dialog" id="ApplyModal">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Nộp CV ứng tuyển của bạn</h5>
+                                <button type="button" class="close btn btn-primary" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Chọn hồ sơ từ thiết bị của bạn</p>
+                                <input type="file" class="form-control-file" id="fileInput"
+                                    (change)="PhotoUpload($event)">
+                            </div>
+                            <div class="modal-footer">
+                                <button type=""  (click)="apply(item.id_congviec)" class="btn btn-primary">Nộp CV</button>
+                                <button type="button" class="btn btn-dark" data-dismiss="modal">Đóng</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-lg-3  fadeIn" data-wow-delay="0.1s" >
+            <div class="mt-3">
+                <div class="block-ads">
+                    <a class="banner-right p-0 w-100">
+                    <img class="d-none d-md-block lazyloaded" alt="Banner hotline"
+                            src="assets/img/NOSA_banner.jpg" style="width: 246px;">
+                            <img class="d-none d-md-block lazyloaded" alt="Banner hotline"
+                            src="assets/img/banner.png" style="width: 246px;margin-top: 20px;margin-bottom: 40px;">
+                        </a>
+                    </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+<!-- About End -->

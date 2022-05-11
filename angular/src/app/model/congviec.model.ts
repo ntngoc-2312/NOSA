@@ -1,0 +1,19 @@
+export class Congviec {
+id_congviec:number
+id_congty:number
+id_danhmucnganh:number
+id_kynang:number
+id_loaicv:number
+id_loaihinhcv:number
+id_kinhnghiem:number
+id_trinhdo:number
+id_tinh:number
+ten:string
+soluong:number
+luongtoithieu:number
+luongtoida:number
+mota:string
+ngaybatdau:Date
+ngayketthuc:Date
+trangthai:number
+}

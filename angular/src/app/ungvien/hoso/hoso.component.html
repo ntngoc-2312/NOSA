@@ -1,0 +1,152 @@
+<!-- Header End -->
+<div class="container-xxl py-5 bg-dark page-header mb-5">
+    <div class="container my-5 pt-5 pb-4">
+        <h1 class="display-3 text-white mb-3 animated slideInDown">Tài khoản</h1>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb text-uppercase">
+                <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+                <li class="breadcrumb-item text-white active" aria-current="page">Tài khoản</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- Header End -->
+
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-9 wow fadeIn" data-wow-delay="0.1s">
+                <div>
+                    <h3 class="header-box-list mb-20 ">
+                        <span class="title">Thông tin liên hệ</span>
+                        <span class="line"></span>
+                    </h3>
+                </div>
+                <ul class="list-group list-group-flush mt-4">
+                    <li class="list-group-item d-flex flex-wrap no-gutters py-4 px-0">
+                        <div class="col-12 col-lg-3 mb-2 title-0-2-15">Họ và tên<span class="text-danger"> *</span>
+                        </div>
+                        <div class="d-flex col-lg-9 no-gutters">
+                            <div class="col-lg-9">
+                                <div class="full-name font-weight-bold">Nguyễn Ngọc</div>
+                            </div>
+                            <span role="button" class="btn-link text-primary ml-auto">
+                                <i class="fas fa-pencil-alt"></i>
+                                <span class="d-none d-lg-inline">Chỉnh sửa</span>
+                            </span>
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex flex-wrap no-gutters py-3 px-0" data-toggle="modal"
+                        data-target="#changeEmailModal">
+                        <div class="col-12 col-lg-3 mb-2" style="font-size: 18px;">
+                            Địa chỉ email<span class="text-danger"> *</span>
+                        </div>
+                        <div class="d-flex flex-fill col-lg-9 no-gutters">
+                            <div class="flex-fill col-lg-9">
+                                <div class="email font-weight-bold">ngocnguyen2k2312@gmail.com</div>
+                                <p class="text-secondary mt-2 mb-0">Đây là địa chỉ email để đăng nhập. Chúng tôi cũng sẽ
+                                    gửi thông báo đến địa chỉ này.</p>
+                            </div>
+                            <span role="button" class="btn-link text-primary ml-auto">
+                                <i class="fas fa-pencil-alt"></i>
+                                <span class="d-none d-lg-inline">Chỉnh sửa</span>
+                            </span>
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex flex-wrap no-gutters py-4 px-0">
+                        <div class="col-12 col-lg-3 mb-2 title-0-2-15">Giới tính</div>
+                        <div class="d-flex col-lg-9 no-gutters">
+                            <div class="col-lg-9">
+                                <div class="gender font-weight-bold">...</div>
+                            </div>
+                            <span role="button" class="btn-link text-primary ml-auto">
+                                <i class="fas fa-pencil-alt"></i>
+                                <span class="d-none d-lg-inline">Chỉnh sửa</span>
+                            </span>
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex flex-wrap no-gutters py-4 px-0">
+                        <div class="col-12 col-lg-3 mb-2 title-0-2-15">Ngày sinh</div>
+                        <div class="d-flex col-lg-9 no-gutters">
+                            <div class="col-lg-9">
+                                <div class="birth-date"><span class="text-secondary">Nhập ngày sinh của bạn</span></div>
+                            </div>
+                            <span role="button" class="btn-link text-primary ml-auto">
+                                <i class="fas fa-pencil-alt"></i>
+                                <span class="d-none d-lg-inline">Chỉnh sửa</span>
+                            </span>
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex flex-wrap no-gutters py-4 px-0">
+                        <div class="col-12 col-lg-3 mb-2 title-0-2-15">Tình trạng hôn nhân</div>
+                        <div class="d-flex col-lg-9 no-gutters">
+                            <div class="col-lg-9">
+                                <div class="marital-status font-weight-bold">...</div>
+                            </div><span role="button" class="btn-link text-primary ml-auto"><i
+                                    class="fas fa-pencil-alt"></i><span class="d-none d-lg-inline">Chỉnh
+                                    sửa</span></span>
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex flex-wrap no-gutters py-4 px-0">
+                        <div class="col-12 col-lg-3 mb-2 title-0-2-15">Số điện thoại</div>
+                        <div class="d-flex col-lg-9 no-gutters">
+                            <div class="col-lg-9">
+                                <div class="phone"><span class="text-secondary">Thêm số điện thoại của bạn</span></div>
+                            </div><span role="button" class="btn-link text-primary ml-auto"><i
+                                    class="fas fa-pencil-alt"></i><span class="d-none d-lg-inline">Chỉnh
+                                    sửa</span></span>
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex flex-wrap no-gutters py-4 px-0">
+                        <div class="col-12 col-lg-3 mb-2 title-0-2-15">Địa chỉ</div>
+                        <div class="d-flex col-lg-9 no-gutters">
+                            <div class="col-lg-9">
+                                <div class="address font-weight-bold">, Viet Nam</div>
+                            </div><span role="button" class="btn-link text-primary ml-auto"><i
+                                    class="fas fa-pencil-alt"></i><span class="d-none d-lg-inline">Chỉnh
+                                    sửa</span></span>
+                        </div>
+                    </li>
+                    <p class="text-center bg-light text-muted font-weight-bolder p-2 mt-2">Ngày đăng ký: 14/3/2022</p>
+                </ul>
+            </div>
+            <div class="col-lg-3 " >
+                <div class="manager-center cont-sidebar mb-12" style="margin-top: -100px;">
+                    <div class="manager-header font600">Quản lý tài khoản</div>
+                    <div class="content-sidebar ex-sidebar-show">
+                        <ul class="jsx-509670941 lst-dropdown-menu">
+                            <li class="jsx-509670941">
+                                <a title="Tài khoản" class="jsx-509670941" href="/ungvien/hoso">
+                                    <i class="fas fa-user"></i>Tài khoản
+                                </a>
+                            </li>
+                            <li class="jsx-509670941">
+                                <a title="Tài khoản" class="jsx-509670941" href="/ungvien/hoso">
+                                    <i class="fas fa-heart"></i>Công việc đã lưu
+                                </a>
+                            </li>
+                            <li class="jsx-509670941">
+                                <a title="Tài khoản" class="jsx-509670941" href="/ungvien/hoso">
+                                    <i class="fas fa-paper-plane"></i>Việc đã ứng tuyển
+                                </a>
+                            </li>
+                            <li class="jsx-509670941">
+                                <a title="Tài khoản" class="jsx-509670941" href="/ungvien/hoso">
+                                    <i class="fas fa-bell"></i>Thông báo việc làm
+                                </a>
+                            </li>
+                            <li class="jsx-509670941 logout" style="margin-top: 12px;">
+                                <a title="Đăng xuất" class="jsx-509670941 underline"><i class="fas fa-sign-out-alt"></i>Đăng xuất</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-3">
+                        <div class="block-ads"><a class="banner-right p-0 w-100"><img
+                                    class="d-none d-md-block lazyloaded" alt="Banner hotline"
+                                    src="assets/img/NOSA_banner.jpg" style="width: 246px;"></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

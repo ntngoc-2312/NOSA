@@ -1,0 +1,88 @@
+<!-- Header End -->
+<div class="container-xxl py-5 bg-dark page-header mb-5">
+    <div class="container my-5 pt-5 pb-4">
+        <h1 class="display-3 text-white mb-3 animated slideInDown" >Công việc đã lưu</h1>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb text-uppercase">
+                <li class="breadcrumb-item"><a href="/ungvien">Trang chủ</a></li>
+                <li class="breadcrumb-item text-white active" aria-current="page">Công việc đã lưu</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- Header End -->
+<div class="container mt-lg-5">
+    <div class="row">
+        <div class="col-lg-9 px-0 px-lg-3">
+            <div *ngIf="luuviec.length != 0">
+                <h1 class="px-2 px-lg-0 h5 " >
+                    Công việc đã lưu
+                    (<span class="saved_jobs-count">{{luuviec.length}}</span>)
+                </h1>
+                <ul class="mb-4 mt-md-4 p-0" id="saved-jobs-list">
+                    <li class="border-bottom job-item1 overflow-hidden p-0 position-relative" *ngFor="let item of luuviec ">
+                        <div class="media align-items-center p-3 px-lg-2">
+                            <div
+                                class="job-logo d-flex align-items-center justify-content-center bg-white p-0 mx-2 my-lg-auto">
+                                <img  src="/assets/img/{{item.logo}}">
+                            </div>
+                            <div class="media-body overflow-hidden row no-gutters align-items-center">
+                                <div class="col-lg-8 px-2 position-unset" style="width:425px">
+                                    <a class="job-link clickable-outside text-decoration-none" title="{{item.ten}}"
+                                        href="/ungvien/ctcv/{{item.id_congviec}}"  >
+                                        <h6 class="job-title text-line-clamp-1 mb-0">
+                                           {{item.ten}}
+                                        </h6>
+                                    </a><a
+                                        class="job-company d-inline-block text-secondary mobile-disabled-link position-relative text-line-clamp-1"
+                                        title="{{item.tencongty}}"
+                                        href="/ungvien/congty/{{item.id_congty}}">{{item.tencongty}}</a>
+                                </div>
+                                <div class=" col-lg-4 text-line-clamp-1 position-unset px-2" style="width:208px;font-size: 14px;">
+                                    <span class="text-success">
+                                        Ngày hết hạn:
+                                        <span class="cl-datetime" data-datetime="1652659199">{{item.ngayketthuc | date:'dd-MM-yyyy'}}</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="job-action d-flex">
+                                <button class="apply-btn btn btn-primary px-4 px-lg-0" 
+                                    data-target="#applyModal" data-toggle="modal" type="button">
+                                        <i class="fab fa-telegram-plane mr-1 mr-lg-0"></i>
+                                </button>
+                                <button class="apply-btn btn btn-primary px-4 px-lg-0"  type="button" (click)="xoa(item.id_luucongviec)" >
+                                    <i class="fas fa-times mr-1 mr-lg-0"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </li>                   
+                </ul>
+            </div>
+            <div class="text-center" id="saved-jobs-empty" *ngIf="luuviec.length == 0" style="margin-bottom: 50px;">
+                <h1 class=" h5" style="text-align: left">
+                    Công việc đã lưu
+                    (<span class="saved_jobs-count">{{luuviec.length}}</span>)
+                </h1>
+                <img alt="CareerLink" width="100px"
+                    src="/assets/img/saved-jobs-empty.png">
+                <h5 class="px-3 mt-4">
+                    Lưu lại việc làm bạn quan tâm để xem lại dễ dàng!
+                </h5>
+                <a class="btn btn-primary mt-3 py-2 px-4 font-weight-bold" href="/ungvien">Đến trang tìm việc
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-3  fadeIn" data-wow-delay="0.1s" >
+            <div class="mt-3">
+                <div class="block-ads">
+                    <a class="banner-right p-0 w-100">
+                    <img class="d-none d-md-block lazyloaded" alt="Banner hotline"
+                            src="assets/img/NOSA_banner.jpg" style="width: 246px;">
+                            <img class="d-none d-md-block lazyloaded" alt="Banner hotline"
+                            src="assets/img/banner.png" style="width: 246px;margin-top: 20px;margin-bottom: 40px;">
+                        </a>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>

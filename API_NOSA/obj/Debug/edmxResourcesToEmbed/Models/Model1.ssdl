@@ -1,0 +1,420 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBNOSAModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Congty">
+    <Key>
+      <PropertyRef Name="id_congty" />
+    </Key>
+    <Property Name="id_congty" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_user" Type="int" />
+    <Property Name="ten" Type="nvarchar" MaxLength="250" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+    <Property Name="diachi" Type="nvarchar" MaxLength="250" />
+    <Property Name="dienthoai" Type="varchar" MaxLength="20" />
+    <Property Name="logo" Type="nvarchar" MaxLength="150" />
+    <Property Name="gioithieu" Type="nvarchar(max)" />
+    <Property Name="url_website" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Congviec">
+    <Key>
+      <PropertyRef Name="id_congviec" />
+    </Key>
+    <Property Name="id_congviec" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_congty" Type="int" />
+    <Property Name="id_danhmucnganh" Type="int" />
+    <Property Name="id_kynang" Type="int" />
+    <Property Name="id_loaicv" Type="int" />
+    <Property Name="id_loaihinhcv" Type="int" />
+    <Property Name="id_kinhnghiem" Type="int" />
+    <Property Name="id_trinhdo" Type="int" />
+    <Property Name="id_tinh" Type="int" />
+    <Property Name="ten" Type="nvarchar" MaxLength="350" />
+    <Property Name="soluong" Type="int" />
+    <Property Name="luongtoithieu" Type="int" />
+    <Property Name="luongtoida" Type="int" />
+    <Property Name="mota" Type="nvarchar(max)" />
+    <Property Name="kinhnghiemchitiet" Type="nvarchar(max)" />
+    <Property Name="ngaybatdau" Type="datetime" />
+    <Property Name="ngayketthuc" Type="datetime" />
+    <Property Name="trangthai" Type="int" />
+  </EntityType>
+  <EntityType Name="Danhmucnganh">
+    <Key>
+      <PropertyRef Name="id_danhmucnganh" />
+    </Key>
+    <Property Name="id_danhmucnganh" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tendanhmuc" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Danhmuctin">
+    <Key>
+      <PropertyRef Name="id_danhmuctin" />
+    </Key>
+    <Property Name="id_danhmuctin" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tendanhmuctin" Type="nvarchar" MaxLength="150" />
+    <Property Name="trangthai" Type="int" />
+  </EntityType>
+  <EntityType Name="Kinhnghiem">
+    <Key>
+      <PropertyRef Name="id_kinhnghiem" />
+    </Key>
+    <Property Name="id_kinhnghiem" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_user" Type="int" />
+    <Property Name="ten" Type="nvarchar" MaxLength="200" />
+    <Property Name="mota" Type="nvarchar" MaxLength="750" />
+  </EntityType>
+  <EntityType Name="Kynang">
+    <Key>
+      <PropertyRef Name="id_kynang" />
+    </Key>
+    <Property Name="id_kynang" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_loaikynang" Type="int" />
+    <Property Name="ten" Type="nvarchar" MaxLength="150" />
+    <Property Name="mota" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Loaicongviec">
+    <Key>
+      <PropertyRef Name="id_loaicv" />
+    </Key>
+    <Property Name="id_loaicv" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tenloaicv" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="Loaihinhcongviec">
+    <Key>
+      <PropertyRef Name="id_loaihinhcv" />
+    </Key>
+    <Property Name="id_loaihinhcv" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tenloaihinhcv" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="Luucongviec">
+    <Key>
+      <PropertyRef Name="id_luucongviec" />
+    </Key>
+    <Property Name="id_luucongviec" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_user" Type="int" />
+    <Property Name="id_congviec" Type="int" />
+  </EntityType>
+  <EntityType Name="NopCV">
+    <Key>
+      <PropertyRef Name="id_nopcv" />
+    </Key>
+    <Property Name="id_nopcv" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_user" Type="int" />
+    <Property Name="id_congviec" Type="int" />
+    <Property Name="anhcv" Type="nvarchar" MaxLength="150" />
+    <Property Name="ngaynop" Type="datetime" />
+    <Property Name="trangthai" Type="int" />
+  </EntityType>
+  <EntityType Name="Tinhthanh">
+    <Key>
+      <PropertyRef Name="id_tinh" />
+    </Key>
+    <Property Name="id_tinh" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tentinh" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Tintuc">
+    <Key>
+      <PropertyRef Name="id_tin" />
+    </Key>
+    <Property Name="id_tin" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_danhmuctin" Type="int" />
+    <Property Name="tieude" Type="nvarchar" MaxLength="350" />
+    <Property Name="hinhanh" Type="nvarchar" MaxLength="150" />
+    <Property Name="noidung" Type="nvarchar(max)" />
+    <Property Name="ngaydang" Type="datetime" />
+    <Property Name="nguoiviet" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="Trinhdohocvan">
+    <Key>
+      <PropertyRef Name="id_trinhdo" />
+    </Key>
+    <Property Name="id_trinhdo" Type="int" Nullable="false" />
+    <Property Name="ten" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="User_role">
+    <Key>
+      <PropertyRef Name="id_user" />
+    </Key>
+    <Property Name="id_user" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_trinhdo" Type="int" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+    <Property Name="matkhau" Type="varchar" MaxLength="100" />
+    <Property Name="hoten" Type="nvarchar" MaxLength="100" />
+    <Property Name="gioitinh" Type="nvarchar" MaxLength="10" />
+    <Property Name="ngaysinh" Type="datetime" />
+    <Property Name="diachi" Type="nvarchar" MaxLength="150" />
+    <Property Name="dienthoai" Type="varchar" MaxLength="20" />
+    <Property Name="role" Type="int" />
+    <Property Name="trangthai" Type="int" />
+  </EntityType>
+  <Association Name="FK_Congty_User_role">
+    <End Role="User_role" Type="Self.User_role" Multiplicity="0..1" />
+    <End Role="Congty" Type="Self.Congty" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_role">
+        <PropertyRef Name="id_user" />
+      </Principal>
+      <Dependent Role="Congty">
+        <PropertyRef Name="id_user" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Congviec_Congty">
+    <End Role="Congty" Type="Self.Congty" Multiplicity="0..1" />
+    <End Role="Congviec" Type="Self.Congviec" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Congty">
+        <PropertyRef Name="id_congty" />
+      </Principal>
+      <Dependent Role="Congviec">
+        <PropertyRef Name="id_congty" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Congviec_Danhmucnganh">
+    <End Role="Danhmucnganh" Type="Self.Danhmucnganh" Multiplicity="0..1" />
+    <End Role="Congviec" Type="Self.Congviec" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Danhmucnganh">
+        <PropertyRef Name="id_danhmucnganh" />
+      </Principal>
+      <Dependent Role="Congviec">
+        <PropertyRef Name="id_danhmucnganh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Congviec_Kinhnghiem">
+    <End Role="Kinhnghiem" Type="Self.Kinhnghiem" Multiplicity="0..1" />
+    <End Role="Congviec" Type="Self.Congviec" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kinhnghiem">
+        <PropertyRef Name="id_kinhnghiem" />
+      </Principal>
+      <Dependent Role="Congviec">
+        <PropertyRef Name="id_kinhnghiem" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Congviec_Kynang">
+    <End Role="Kynang" Type="Self.Kynang" Multiplicity="0..1" />
+    <End Role="Congviec" Type="Self.Congviec" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kynang">
+        <PropertyRef Name="id_kynang" />
+      </Principal>
+      <Dependent Role="Congviec">
+        <PropertyRef Name="id_kynang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Congviec_Loaicongviec">
+    <End Role="Loaicongviec" Type="Self.Loaicongviec" Multiplicity="0..1" />
+    <End Role="Congviec" Type="Self.Congviec" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Loaicongviec">
+        <PropertyRef Name="id_loaicv" />
+      </Principal>
+      <Dependent Role="Congviec">
+        <PropertyRef Name="id_loaicv" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Congviec_Loaihinhcongviec">
+    <End Role="Loaihinhcongviec" Type="Self.Loaihinhcongviec" Multiplicity="0..1" />
+    <End Role="Congviec" Type="Self.Congviec" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Loaihinhcongviec">
+        <PropertyRef Name="id_loaihinhcv" />
+      </Principal>
+      <Dependent Role="Congviec">
+        <PropertyRef Name="id_loaihinhcv" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Congviec_Tinhthanh">
+    <End Role="Tinhthanh" Type="Self.Tinhthanh" Multiplicity="0..1" />
+    <End Role="Congviec" Type="Self.Congviec" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tinhthanh">
+        <PropertyRef Name="id_tinh" />
+      </Principal>
+      <Dependent Role="Congviec">
+        <PropertyRef Name="id_tinh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Congviec_Trinhdohocvan">
+    <End Role="Trinhdohocvan" Type="Self.Trinhdohocvan" Multiplicity="0..1" />
+    <End Role="Congviec" Type="Self.Congviec" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Trinhdohocvan">
+        <PropertyRef Name="id_trinhdo" />
+      </Principal>
+      <Dependent Role="Congviec">
+        <PropertyRef Name="id_trinhdo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kinhnghiem_User_role">
+    <End Role="User_role" Type="Self.User_role" Multiplicity="0..1" />
+    <End Role="Kinhnghiem" Type="Self.Kinhnghiem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_role">
+        <PropertyRef Name="id_user" />
+      </Principal>
+      <Dependent Role="Kinhnghiem">
+        <PropertyRef Name="id_user" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Luucongviec_Congviec">
+    <End Role="Congviec" Type="Self.Congviec" Multiplicity="0..1" />
+    <End Role="Luucongviec" Type="Self.Luucongviec" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Congviec">
+        <PropertyRef Name="id_congviec" />
+      </Principal>
+      <Dependent Role="Luucongviec">
+        <PropertyRef Name="id_congviec" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Luucongviec_User_role">
+    <End Role="User_role" Type="Self.User_role" Multiplicity="0..1" />
+    <End Role="Luucongviec" Type="Self.Luucongviec" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_role">
+        <PropertyRef Name="id_user" />
+      </Principal>
+      <Dependent Role="Luucongviec">
+        <PropertyRef Name="id_user" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NopCV_Congviec">
+    <End Role="Congviec" Type="Self.Congviec" Multiplicity="0..1" />
+    <End Role="NopCV" Type="Self.NopCV" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Congviec">
+        <PropertyRef Name="id_congviec" />
+      </Principal>
+      <Dependent Role="NopCV">
+        <PropertyRef Name="id_congviec" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NopCV_User_role">
+    <End Role="User_role" Type="Self.User_role" Multiplicity="0..1" />
+    <End Role="NopCV" Type="Self.NopCV" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_role">
+        <PropertyRef Name="id_user" />
+      </Principal>
+      <Dependent Role="NopCV">
+        <PropertyRef Name="id_user" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tintuc_Danhmuctin">
+    <End Role="Danhmuctin" Type="Self.Danhmuctin" Multiplicity="0..1" />
+    <End Role="Tintuc" Type="Self.Tintuc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Danhmuctin">
+        <PropertyRef Name="id_danhmuctin" />
+      </Principal>
+      <Dependent Role="Tintuc">
+        <PropertyRef Name="id_danhmuctin" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_role_Trinhdohocvan">
+    <End Role="Trinhdohocvan" Type="Self.Trinhdohocvan" Multiplicity="0..1" />
+    <End Role="User_role" Type="Self.User_role" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Trinhdohocvan">
+        <PropertyRef Name="id_trinhdo" />
+      </Principal>
+      <Dependent Role="User_role">
+        <PropertyRef Name="id_trinhdo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DBNOSAModelStoreContainer">
+    <EntitySet Name="Congty" EntityType="Self.Congty" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Congviec" EntityType="Self.Congviec" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Danhmucnganh" EntityType="Self.Danhmucnganh" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Danhmuctin" EntityType="Self.Danhmuctin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kinhnghiem" EntityType="Self.Kinhnghiem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kynang" EntityType="Self.Kynang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Loaicongviec" EntityType="Self.Loaicongviec" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Loaihinhcongviec" EntityType="Self.Loaihinhcongviec" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Luucongviec" EntityType="Self.Luucongviec" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NopCV" EntityType="Self.NopCV" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tinhthanh" EntityType="Self.Tinhthanh" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tintuc" EntityType="Self.Tintuc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Trinhdohocvan" EntityType="Self.Trinhdohocvan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User_role" EntityType="Self.User_role" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Congty_User_role" Association="Self.FK_Congty_User_role">
+      <End Role="User_role" EntitySet="User_role" />
+      <End Role="Congty" EntitySet="Congty" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Congviec_Congty" Association="Self.FK_Congviec_Congty">
+      <End Role="Congty" EntitySet="Congty" />
+      <End Role="Congviec" EntitySet="Congviec" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Congviec_Danhmucnganh" Association="Self.FK_Congviec_Danhmucnganh">
+      <End Role="Danhmucnganh" EntitySet="Danhmucnganh" />
+      <End Role="Congviec" EntitySet="Congviec" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Congviec_Kinhnghiem" Association="Self.FK_Congviec_Kinhnghiem">
+      <End Role="Kinhnghiem" EntitySet="Kinhnghiem" />
+      <End Role="Congviec" EntitySet="Congviec" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Congviec_Kynang" Association="Self.FK_Congviec_Kynang">
+      <End Role="Kynang" EntitySet="Kynang" />
+      <End Role="Congviec" EntitySet="Congviec" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Congviec_Loaicongviec" Association="Self.FK_Congviec_Loaicongviec">
+      <End Role="Loaicongviec" EntitySet="Loaicongviec" />
+      <End Role="Congviec" EntitySet="Congviec" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Congviec_Loaihinhcongviec" Association="Self.FK_Congviec_Loaihinhcongviec">
+      <End Role="Loaihinhcongviec" EntitySet="Loaihinhcongviec" />
+      <End Role="Congviec" EntitySet="Congviec" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Congviec_Tinhthanh" Association="Self.FK_Congviec_Tinhthanh">
+      <End Role="Tinhthanh" EntitySet="Tinhthanh" />
+      <End Role="Congviec" EntitySet="Congviec" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Congviec_Trinhdohocvan" Association="Self.FK_Congviec_Trinhdohocvan">
+      <End Role="Trinhdohocvan" EntitySet="Trinhdohocvan" />
+      <End Role="Congviec" EntitySet="Congviec" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kinhnghiem_User_role" Association="Self.FK_Kinhnghiem_User_role">
+      <End Role="User_role" EntitySet="User_role" />
+      <End Role="Kinhnghiem" EntitySet="Kinhnghiem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Luucongviec_Congviec" Association="Self.FK_Luucongviec_Congviec">
+      <End Role="Congviec" EntitySet="Congviec" />
+      <End Role="Luucongviec" EntitySet="Luucongviec" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Luucongviec_User_role" Association="Self.FK_Luucongviec_User_role">
+      <End Role="User_role" EntitySet="User_role" />
+      <End Role="Luucongviec" EntitySet="Luucongviec" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NopCV_Congviec" Association="Self.FK_NopCV_Congviec">
+      <End Role="Congviec" EntitySet="Congviec" />
+      <End Role="NopCV" EntitySet="NopCV" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NopCV_User_role" Association="Self.FK_NopCV_User_role">
+      <End Role="User_role" EntitySet="User_role" />
+      <End Role="NopCV" EntitySet="NopCV" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tintuc_Danhmuctin" Association="Self.FK_Tintuc_Danhmuctin">
+      <End Role="Danhmuctin" EntitySet="Danhmuctin" />
+      <End Role="Tintuc" EntitySet="Tintuc" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_role_Trinhdohocvan" Association="Self.FK_User_role_Trinhdohocvan">
+      <End Role="Trinhdohocvan" EntitySet="Trinhdohocvan" />
+      <End Role="User_role" EntitySet="User_role" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

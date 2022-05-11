@@ -1,0 +1,245 @@
+<!-- Header End -->
+<div class="container-xxl py-5 bg-dark page-header mb-5">
+    <div class="container my-5 pt-5 pb-4">
+        <h1 class="display-3 text-white mb-3 animated slideInDown">Đăng tuyển</h1>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb text-uppercase">
+                <li class="breadcrumb-item"><a href="/nhatuyendung">Trang chủ</a></li>
+                <li class="breadcrumb-item text-white active" aria-current="page">Đăng tuyển</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- Header End -->
+<div class="container">
+    <div class="row g-5">
+        <div class="col-lg-9  fadeIn" data-wow-delay="0.1s">
+            <form class="form-hook">
+                <div class="lst-group mt-3 mt-0-mb">
+                    <div>
+                        <h3 class="header-box-list mb-20 "><span class="title">Đăng tin tuyển dụng</span><span
+                                class="line"></span></h3>
+                    </div>
+                    <div class="form-group row row-form">
+                        <label for="title" class="col-12 col-md-3 col-lb mb-1-mb">
+                            Chức vụ/ Vị trí <b class="text-red ml-1">*</b>
+                        </label>
+                        <div class="col-input col-md position-relative">
+                            <div class="input-text col-md-12 px-0">
+                                <input type="text" placeholder="Nhập vị trí công việc" name="title" class="form-control"
+                                    [(ngModel)]="ten">
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row row-form" style="height: 35px;">
+                        <label for="gender" class="col-12 col-md-3 col-lb mb-1-mb">
+                            <div>Ngành nghề<b class="text-red"> *</b></div>
+                        </label>
+                        <div class="col-input col-md">
+                            <div class="input-text col-md-5  select2-default " aria-label="Default select example">
+                                <select name="nganh" [(ngModel)]="id_danhmucnganh" id="">
+                                    <option selected value="">Chọn ngành nghề</option>
+                                    <option *ngFor="let item of nganh" value="{{item.id_danhmucnganh}}">
+                                        {{item.tendanhmuc}}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row row-form">
+                        <label for="vacancy_quantity" class="col-12 col-md-3 col-lb mb-1-mb">
+                            Số lượng cần tuyển<b class="text-red ml-1">*</b>
+                        </label>
+                        <div class="col-input col-md position-relative">
+                            <div class="input-text col-md-4 px-0">
+                                <input type="number" name="vacancy_quantity" class="form-control" [(ngModel)]="soluong">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row row-form">
+                        <label for="description" class="col-12 col-md-3 col-lb mb-1-mb">
+                            Mô tả công việc<b class="text-red ml-1">*</b>
+                        </label>
+                        <div class="col-input col-md position-relative" style="margin-bottom: 10px">
+                            <div class="input-text col-md-12 px-0">
+                                <textarea [(ngModel)]="mota" placeholder="Nhập mô tả công việc" name="description" 
+                                    class="form-control textarea-long  text-area fs-16-mb" 
+                                    ></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row row-form">
+                        <label for="gender" class="col-12 col-md-3 col-lb mb-1-mb">
+                            <div>Trình độ<b class="text-red"> *</b></div>
+                        </label>
+                        <div class="col-input col-md">
+                            <div class="input-text col-md-5 px-0 select2-default " aria-label="Default select example">
+                                <select name="trinhdo" [(ngModel)]="id_trinhdo" id="">
+                                    <option selected value="">Chọn trình độ</option>
+                                    <option *ngFor="let item of trinhdo" value="{{item.id_trinhdo}}">
+                                        {{item.ten}}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row row-form " style="margin-top: 0px;">
+                        <label for="gender" class="col-12 col-md-3 col-lb mb-1-mb">
+                            <div>Kinh nghiệm<b class="text-red"> *</b></div>
+                        </label>
+                        <div class="col-input col-md">
+                            <div class="input-text col-md-5 px-0 select2-default">
+                                <select name="select" [(ngModel)]="id_kinhnghiem">
+                                    <option selected value="">Chọn kinh nghiệm</option>
+                                    <option *ngFor="let item of kinhnghiem" value="{{item.id_kinhnghiem}}">
+                                        {{item.ten}}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row row-form">
+                        <label for="description" class="col-12 col-md-3 col-lb mb-1-mb">
+                            Kinh nghiệm/kỹ năng chi tiết<b class="text-red ml-1">*</b>
+                        </label>
+                        <div class="col-input col-md position-relative" style="margin-bottom: 20px">
+                            <div class="input-text col-md-12 px-0">
+                                <textarea placeholder="Nhập mô tả công việc" name="description"
+                                    class="form-control textarea-long  text-area fs-16-mb"
+                                    [(ngModel)]="kinhnghiemchitiet"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="form-group row row-form" style="margin-top: 0px;">
+                            <label for="[object Object]" class="col-12 col-md-3 col-lb mb-1-mb">
+                                <div class="jsx-2496542016">Mức lương</div>
+                            </label>
+                            <div class="col-input col-md">
+                                <div class="input-text col-md-10 px-0">
+                                    <div class="d-flex align-items-center">
+                                        <span class="mr-1 fs-12 label-from">từ &nbsp;</span>
+                                        <span>
+                                            <input type="number" name="commission_from" min="0"
+                                                [(ngModel)]="luongtoithieu" class="form-control ">
+                                        </span>
+                                        <span class="mx-2 fs-12 label-to">đến</span>
+                                        <span>
+                                            <input type="number" name="commission_to" min="0" class="form-control"
+                                                [(ngModel)]="luongtoida">
+                                        </span>
+                                        <span class="fs-12 ml-1 label-to"> &nbsp; triệu</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row row-form">
+                        <label for="gender" class="col-12 col-md-3 col-lb mb-1-mb">
+                            <div>Hình thức làm việc<b class="text-red"> *</b></div>
+                        </label>
+                        <div class="col-input col-md">
+                            <div class="input-text col-md-5 px-0 select2-default">
+                                <select name="select" [(ngModel)]="id_loaihinhcv">
+                                    <option selected value="">Chọn hình thức làm việc</option>
+                                    <option *ngFor="let item of loaihinh" value="{{item.id_loaihinhcv}}">
+                                        {{item.tenloaihinhcv}}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row row-form" style="margin-top: 0px;">
+                        <label for="gender" class="col-12 col-md-3 col-lb mb-1-mb">
+                            <div>Nơi làm việc<b class="text-red"> *</b></div>
+                        </label>
+                        <div class="col-input col-md">
+                            <div class="input-text col-md-5 px-0 select2-default">
+                                <select name="select" [(ngModel)]="id_tinh">
+                                    <option selected value="">Chọn nơi làm việc</option>
+                                    <option *ngFor="let item of tinh" value="{{item.id_tinh}}">
+                                        {{item.tentinh}}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row row-form" style="margin-top: 0px;">
+                        <label for="title" class="col-12 col-md-3 col-lb mb-1-mb">
+                            Ngày hết hạn <b class="text-red ml-1">*</b>
+                        </label>
+                        <div class="col-input col-md position-relative">
+                            <div class="input-text col-md-12 px-0">
+                                <input placeholder="dd-MM-yyyy" type="text" name="title" class="form-control" [(ngModel)]="ngayketthuc" style="width:205px">
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row mb-4" style="margin-top: 20px;text-align: center;">
+
+                    <button type="submit" class="btn font-weight-bold  border"  (click)="add(id_congty)"
+                        style="width:150px;color: white;border-radius: 5px;background-color: rgb(228, 35, 35);">
+                        <i class="fas fa-save icon-bigEye mr-2 align-middle"></i>
+                        <span class="jalign-middle" style="margin-left: 7px;">Lưu tin</span>
+                    </button>
+
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-3 ">
+            <div class="manager-center cont-sidebar mb-12">
+                <div class="manager-header font600">Quản lý tài khoản</div>
+                <div class="content-sidebar ex-sidebar-show">
+                    <ul class="jsx-509670941 lst-dropdown-menu">
+                        <li class="jsx-509670941">
+                            <a title="Tài khoản" class="jsx-509670941" href="/ungvien/hoso">
+                                <i class="fas fa-user"></i>Tài khoản
+                            </a>
+                        </li>
+                        <li class="jsx-509670941">
+                            <a title="Tài khoản" class="jsx-509670941" href="/ungvien/hoso">
+                                <i class="fas fa-building"></i>Thông tin công ty
+                            </a>
+                        </li>
+                        <li class="jsx-509670941">
+                            <a title="Tài khoản" class="jsx-509670941" href="/ungvien/hoso">
+                                <i class="fas fa-id-badge"></i>Đăng tin tuyển dụng
+                            </a>
+                        </li>
+                        <li class="jsx-509670941">
+                            <a title="Tài khoản" class="jsx-509670941" href="/ungvien/hoso">
+                                <i class="fas fa-file"></i>Danh sách tin tuyển dụng
+                            </a>
+                        </li>
+                        <li class="jsx-509670941">
+                            <a title="Tài khoản" class="jsx-509670941" href="/ungvien/hoso">
+                                <i class="fas fa-file-download"></i>Hồ sơ đã lưu
+                            </a>
+                        </li>
+                        <li class="jsx-509670941">
+                            <a title="Tài khoản" class="jsx-509670941" href="/ungvien/hoso">
+                                <i class="fas fa-file-export"></i>Hồ sơ ứng tuyển
+                            </a>
+                        </li>
+                        <li class="jsx-509670941 logout" style="margin-top: 12px;">
+                            <a title="Đăng xuất" class="jsx-509670941 underline"><i class="fas fa-sign-out-alt"></i>Đăng
+                                xuất</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mt-3">
+                    <div class="block-ads">
+                        <a class="banner-right p-0 w-100">
+                            <img class="d-none d-md-block lazyloaded" alt="Banner hotline"
+                                src="assets/img/NOSA_banner.jpg" style="width: 246px;">
+                            <img class="d-none d-md-block lazyloaded" alt="Banner hotline" src="assets/img/banner.png"
+                                style="width: 246px;margin-top: 20px;">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

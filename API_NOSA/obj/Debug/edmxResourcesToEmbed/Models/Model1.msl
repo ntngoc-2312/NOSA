@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DBNOSAModelStoreContainer" CdmEntityContainer="DBNOSAEntities">
+    <EntitySetMapping Name="Congties">
+      <EntityTypeMapping TypeName="DBNOSAModel.Congty">
+        <MappingFragment StoreEntitySet="Congty">
+          <ScalarProperty Name="id_congty" ColumnName="id_congty" />
+          <ScalarProperty Name="id_user" ColumnName="id_user" />
+          <ScalarProperty Name="ten" ColumnName="ten" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="diachi" ColumnName="diachi" />
+          <ScalarProperty Name="dienthoai" ColumnName="dienthoai" />
+          <ScalarProperty Name="logo" ColumnName="logo" />
+          <ScalarProperty Name="gioithieu" ColumnName="gioithieu" />
+          <ScalarProperty Name="url_website" ColumnName="url_website" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Congviecs">
+      <EntityTypeMapping TypeName="DBNOSAModel.Congviec">
+        <MappingFragment StoreEntitySet="Congviec">
+          <ScalarProperty Name="id_congviec" ColumnName="id_congviec" />
+          <ScalarProperty Name="id_congty" ColumnName="id_congty" />
+          <ScalarProperty Name="id_danhmucnganh" ColumnName="id_danhmucnganh" />
+          <ScalarProperty Name="id_kynang" ColumnName="id_kynang" />
+          <ScalarProperty Name="id_loaicv" ColumnName="id_loaicv" />
+          <ScalarProperty Name="id_loaihinhcv" ColumnName="id_loaihinhcv" />
+          <ScalarProperty Name="id_kinhnghiem" ColumnName="id_kinhnghiem" />
+          <ScalarProperty Name="id_trinhdo" ColumnName="id_trinhdo" />
+          <ScalarProperty Name="id_tinh" ColumnName="id_tinh" />
+          <ScalarProperty Name="ten" ColumnName="ten" />
+          <ScalarProperty Name="soluong" ColumnName="soluong" />
+          <ScalarProperty Name="luongtoithieu" ColumnName="luongtoithieu" />
+          <ScalarProperty Name="luongtoida" ColumnName="luongtoida" />
+          <ScalarProperty Name="mota" ColumnName="mota" />
+          <ScalarProperty Name="kinhnghiemchitiet" ColumnName="kinhnghiemchitiet" />
+          <ScalarProperty Name="ngaybatdau" ColumnName="ngaybatdau" />
+          <ScalarProperty Name="ngayketthuc" ColumnName="ngayketthuc" />
+          <ScalarProperty Name="trangthai" ColumnName="trangthai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Danhmucnganhs">
+      <EntityTypeMapping TypeName="DBNOSAModel.Danhmucnganh">
+        <MappingFragment StoreEntitySet="Danhmucnganh">
+          <ScalarProperty Name="id_danhmucnganh" ColumnName="id_danhmucnganh" />
+          <ScalarProperty Name="tendanhmuc" ColumnName="tendanhmuc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Danhmuctins">
+      <EntityTypeMapping TypeName="DBNOSAModel.Danhmuctin">
+        <MappingFragment StoreEntitySet="Danhmuctin">
+          <ScalarProperty Name="id_danhmuctin" ColumnName="id_danhmuctin" />
+          <ScalarProperty Name="tendanhmuctin" ColumnName="tendanhmuctin" />
+          <ScalarProperty Name="trangthai" ColumnName="trangthai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kinhnghiems">
+      <EntityTypeMapping TypeName="DBNOSAModel.Kinhnghiem">
+        <MappingFragment StoreEntitySet="Kinhnghiem">
+          <ScalarProperty Name="id_kinhnghiem" ColumnName="id_kinhnghiem" />
+          <ScalarProperty Name="id_user" ColumnName="id_user" />
+          <ScalarProperty Name="ten" ColumnName="ten" />
+          <ScalarProperty Name="mota" ColumnName="mota" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kynangs">
+      <EntityTypeMapping TypeName="DBNOSAModel.Kynang">
+        <MappingFragment StoreEntitySet="Kynang">
+          <ScalarProperty Name="id_kynang" ColumnName="id_kynang" />
+          <ScalarProperty Name="id_loaikynang" ColumnName="id_loaikynang" />
+          <ScalarProperty Name="ten" ColumnName="ten" />
+          <ScalarProperty Name="mota" ColumnName="mota" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Loaicongviecs">
+      <EntityTypeMapping TypeName="DBNOSAModel.Loaicongviec">
+        <MappingFragment StoreEntitySet="Loaicongviec">
+          <ScalarProperty Name="id_loaicv" ColumnName="id_loaicv" />
+          <ScalarProperty Name="tenloaicv" ColumnName="tenloaicv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Loaihinhcongviecs">
+      <EntityTypeMapping TypeName="DBNOSAModel.Loaihinhcongviec">
+        <MappingFragment StoreEntitySet="Loaihinhcongviec">
+          <ScalarProperty Name="id_loaihinhcv" ColumnName="id_loaihinhcv" />
+          <ScalarProperty Name="tenloaihinhcv" ColumnName="tenloaihinhcv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Luucongviecs">
+      <EntityTypeMapping TypeName="DBNOSAModel.Luucongviec">
+        <MappingFragment StoreEntitySet="Luucongviec">
+          <ScalarProperty Name="id_luucongviec" ColumnName="id_luucongviec" />
+          <ScalarProperty Name="id_user" ColumnName="id_user" />
+          <ScalarProperty Name="id_congviec" ColumnName="id_congviec" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NopCVs">
+      <EntityTypeMapping TypeName="DBNOSAModel.NopCV">
+        <MappingFragment StoreEntitySet="NopCV">
+          <ScalarProperty Name="id_nopcv" ColumnName="id_nopcv" />
+          <ScalarProperty Name="id_user" ColumnName="id_user" />
+          <ScalarProperty Name="id_congviec" ColumnName="id_congviec" />
+          <ScalarProperty Name="anhcv" ColumnName="anhcv" />
+          <ScalarProperty Name="ngaynop" ColumnName="ngaynop" />
+          <ScalarProperty Name="trangthai" ColumnName="trangthai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tinhthanhs">
+      <EntityTypeMapping TypeName="DBNOSAModel.Tinhthanh">
+        <MappingFragment StoreEntitySet="Tinhthanh">
+          <ScalarProperty Name="id_tinh" ColumnName="id_tinh" />
+          <ScalarProperty Name="tentinh" ColumnName="tentinh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tintucs">
+      <EntityTypeMapping TypeName="DBNOSAModel.Tintuc">
+        <MappingFragment StoreEntitySet="Tintuc">
+          <ScalarProperty Name="id_tin" ColumnName="id_tin" />
+          <ScalarProperty Name="id_danhmuctin" ColumnName="id_danhmuctin" />
+          <ScalarProperty Name="tieude" ColumnName="tieude" />
+          <ScalarProperty Name="hinhanh" ColumnName="hinhanh" />
+          <ScalarProperty Name="noidung" ColumnName="noidung" />
+          <ScalarProperty Name="ngaydang" ColumnName="ngaydang" />
+          <ScalarProperty Name="nguoiviet" ColumnName="nguoiviet" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Trinhdohocvans">
+      <EntityTypeMapping TypeName="DBNOSAModel.Trinhdohocvan">
+        <MappingFragment StoreEntitySet="Trinhdohocvan">
+          <ScalarProperty Name="id_trinhdo" ColumnName="id_trinhdo" />
+          <ScalarProperty Name="ten" ColumnName="ten" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_role">
+      <EntityTypeMapping TypeName="DBNOSAModel.User_role">
+        <MappingFragment StoreEntitySet="User_role">
+          <ScalarProperty Name="id_user" ColumnName="id_user" />
+          <ScalarProperty Name="id_trinhdo" ColumnName="id_trinhdo" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="matkhau" ColumnName="matkhau" />
+          <ScalarProperty Name="hoten" ColumnName="hoten" />
+          <ScalarProperty Name="gioitinh" ColumnName="gioitinh" />
+          <ScalarProperty Name="ngaysinh" ColumnName="ngaysinh" />
+          <ScalarProperty Name="diachi" ColumnName="diachi" />
+          <ScalarProperty Name="dienthoai" ColumnName="dienthoai" />
+          <ScalarProperty Name="role" ColumnName="role" />
+          <ScalarProperty Name="trangthai" ColumnName="trangthai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
